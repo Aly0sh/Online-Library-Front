@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'LexendDeca';
+    src: url("../fonts/LexendDeca/LexendDeca-Regular.ttf") format("opentype");
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(241, 241, 241);
+    padding: 10px 30px;
+    z-index: 1;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.links {
+    list-style: none;
+    display: inline-block;
+    padding: 0 10px;
+    margin: 10px 0;
+}
+
+.links li {
+    display: inline;
+    margin-left: 20%;
+}
+
+.link {
+    font-style: normal;
+    text-decoration: none;
+    color: #000000;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.lexend{
+    font-family: "LexendDeca", Arial, Helvetica, sans-serif;
+}
+
+.logo{
+    width: 30px;
+    display: block;
+    display: inline-block;
+    position: relative;
+}
+
+.logo img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    display: block;
+}
+
+.icons {
+    list-style: none;
+    display: inline;
+    position: absolute;
+    width: 20%;
+    right: 5%;
+}
+
+.icons li{
+    float: right;
+    margin-left: 15%;
+}
+
+.icons li img {
+    height: 20px;
+    display: inline-block;
+}
+
+.secondNav{
+    display: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .firstNav{
+        display: none;
+    }
+
+    .secondNav {
+        display: flex;
+    }
+}
