@@ -3,9 +3,24 @@
     src: url("../fonts/LexendDeca/LexendDeca-Regular.ttf") format("opentype");
 }
 
+@font-face {
+    font-family: 'LexendDecaLight';
+    src: url("../fonts/LexendDeca/LexendDeca-Light.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: "Tilda Sans"; 
+    src: url("//db.onlinewebfonts.com/t/30aaff8bab312adfd29944c9cfb18158.eot"); 
+    src: url("//db.onlinewebfonts.com/t/30aaff8bab312adfd29944c9cfb18158.eot?#iefix") 
+    format("embedded-opentype"), url("//db.onlinewebfonts.com/t/30aaff8bab312adfd29944c9cfb18158.woff2") 
+    format("woff2"), url("//db.onlinewebfonts.com/t/30aaff8bab312adfd29944c9cfb18158.woff") 
+    format("woff"), url("//db.onlinewebfonts.com/t/30aaff8bab312adfd29944c9cfb18158.ttf") 
+    format("truetype"), url("//db.onlinewebfonts.com/t/30aaff8bab312adfd29944c9cfb18158.svg#Tilda Sans") format("svg"); }
+
 body{
     padding: 0;
     margin: 0;
+    background-color: #f2f2f2;
 }
 
 nav{
@@ -16,7 +31,10 @@ nav{
     align-items: center;
     display: flex;
     position: relative;
+    transition: all 0.3s ease;
 }
+
+input {outline:none;}
 
 .links {
     list-style: none;
@@ -38,23 +56,37 @@ nav{
     letter-spacing: 2px;
 }
 
+.link:hover {
+    text-decoration: underline;
+}
+
 .lexend{
     font-family: "LexendDeca", Arial, Helvetica, sans-serif;
 }
 
+.lexend-light{
+    font-family: "LexendDecaLight", Arial, Helvetica, sans-serif;
+}
+
 .logo{
-    width: 30px;
+    width: 40px;
     display: block;
     display: inline-block;
     position: relative;
+    cursor: pointer;
 }
+
+router-link{
+    cursor: pointer;
+}
+
 
 .logo img {
     width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -70%);
+    transform: translate(-50%, -60%);
     display: block;
 }
 
@@ -69,6 +101,7 @@ nav{
 .icons li{
     float: right;
     margin-left: 15%;
+    cursor: pointer;
 }
 
 .icons li img {
@@ -80,6 +113,12 @@ nav{
     display: none;
 }
 
+.under-line{
+    width: auto;
+    height: 3px;
+    background-color: #000000;
+}
+
 
 @media screen and (max-width: 1000px) {
     .firstNav{
@@ -89,4 +128,235 @@ nav{
     .secondNav {
         display: flex;
     }
+
+    .logo{
+        width: 35px;
+        margin: auto;
+        cursor: pointer;
+    }
+
+    .logo img {
+        position: relative;
+        transform: none;
+    }
+
+    .menu {
+        width: 20px;
+        height: 16px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .f-line-menu{
+        background-color: #000000;
+        position: absolute;
+        height: 3px;
+        width: 20px;
+        top: 0%;
+        transition: all 0.3s ease;
+    }
+
+    .s-line-menu{
+        background-color: #000000;
+        position: absolute;
+        height: 3px;
+        width: 20px;
+        top: 50%;
+        transform: translate(0, -50%);
+        transition: all 0.3s ease;
+    }
+
+    .t-line-menu{
+        background-color: #000000;
+        position: absolute;
+        height: 3px;
+        width: 20px;
+        bottom: 0%;
+        transition: all 0.3s ease;
+    }
+
+    
+    .f-line-menu-active{
+        background-color: #000000;
+        position: absolute;
+        height: 3px;
+        width: 20px;
+        top: 0%;
+        transform: rotate(-45deg);
+        transition: all 0.3s ease;
+    }
+
+    .s-line-menu-active{
+        background-color: #000000;
+        position: absolute;
+        height: 3px;
+        width: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        transition: all 0.3s ease;
+    }
+
+    .t-line-menu-active{
+        background-color: #000000;
+        position: absolute;
+        height: 3px;
+        width: 20px;
+        bottom: 0%;
+        transform: rotate(45deg);
+        transition: all 0.3s ease;
+    }
+
+    .nav-cart{
+        cursor: pointer;
+    }
+
+    .nav-cart-dis{
+        display: none;
+    }
+}
+
+.secondNav-100{
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.login-wrapper{
+    width: 30%;
+    min-height: 50vh;
+    margin: auto;
+    margin-top: 20vh;
+}
+
+.login-input{
+    font-family: "LexendDeca", Arial, Helvetica, sans-serif;
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid black;
+    font-size: 14px;
+    padding-bottom: 10px;
+    margin-top: 50px;
+    background-color: #f2f2f2;
+}
+
+.login-button{
+    font-family: "LexendDeca", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin-left: 50%;
+    margin-top: 70px;
+    border-radius: 20px;
+    border: none;
+    width: 20%;
+    padding: 10px;
+    background-color: rgb(255, 195, 86);
+    transform: translate(-50%, 0);
+}
+
+.sign-up-text{
+    font-family: "LexendDeca", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: rgb(85, 85, 85);
+}
+
+.registration-block-center{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.sign-up-button{
+    font-family: "LexendDeca", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin-left: 50%;
+    margin-top: 70px;
+    border-radius: 20px;
+    border: none;
+    width: 50%;
+    padding: 10px;
+    background-color: rgb(255, 195, 86);
+    transform: translate(-50%, 0);
+    cursor: pointer;
+}
+
+.sign-up-wrapper{
+    width: 30%;
+    min-height: 50vh;
+    margin-top: 5vh;
+    float: left;
+    margin-left: 13%;
+    margin-bottom: 5vh;
+}
+
+.sign-up-input{
+    font-family: "LexendDeca", Arial, Helvetica, sans-serif;
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid black;
+    font-size: 14px;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    background-color: #f2f2f2;
+}
+
+.home-title{
+    font-family: "LexendDecaLight", Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: 100;
+    color: rgb(64, 59, 59);
+}
+
+.wrapper{
+    width: 80%;
+    margin: auto;
+}
+
+.carts-home{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 5%;
+    grid-row-gap: 5vw;
+}
+
+.cart-home{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+
+.cart-home img{
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-home h2{
+    font-family: "Tilda Sans", Arial, sans-serif;
+    font-weight: 100;
+}
+
+.cart-home p{
+    font-family: "Tilda Sans", Arial, sans-serif;
+    font-weight: 100;
+}
+
+.content-cart{
+    padding: 20px;
+    font-size: 14px;
+}
+
+.cart-home-more{
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-family: "Tilda Sans", Arial, sans-serif;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+
+.cart-home-more:hover{
+    background-color: #6e6e6e;
 }
