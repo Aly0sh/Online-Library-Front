@@ -18,17 +18,18 @@ import axios from "axios";
 export default {
     data() {
         return {
+            baseUrl: "https://yngaily.herokuapp.com",
             user: {
                 username: '',
                 password: ''
-            }
+            },
         }
     },
     methods: {
         signin() {
             console.log(this.user);
             axios
-                .post("http://127.0.0.1:8000/login/", this.user)
+                .post(this.baseUrl + "/login/", this.user)
                 .then((resp) => {
                     if (resp.status == 200) {
                         // this.$store.commit("setCredentials", {
@@ -62,6 +63,7 @@ export default {
                         this.signInErrorMessage = error.response.data.details;
                         console.log(error.response.data);
                     }
+                    alert("Введенное имя пользователя либо пароль не верны!");
                 });
                 console.log(this.$store.getters.getToken);
             }

@@ -61,7 +61,8 @@ input {outline:none;}
 }
 
 .lexend{
-    font-family: "LexendDeca", Arial, Helvetica, sans-serif;
+    font-family: "Tilda Sans", Arial, Helvetica, sans-serif;
+    font-weight: 600;
 }
 
 .lexend-light{
@@ -215,6 +216,7 @@ router-link{
     .nav-cart-dis{
         display: none;
     }
+
 }
 
 .secondNav-100{
@@ -354,9 +356,376 @@ router-link{
     font-family: "Tilda Sans", Arial, sans-serif;
     background-color: #ffffff;
     cursor: pointer;
+    transition: all 0.4s ease;
 }
 
 
 .cart-home-more:hover{
-    background-color: #6e6e6e;
+    background-color: #acacac;
+    transition: all 0.4s ease;
+}
+
+.cart-home-add{
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-family: "Tilda Sans", Arial, sans-serif;
+    background-color: #403b3b;
+    color: #ffffff;
+    cursor: pointer;
+    margin-right: 2%;
+    transition: all 0.4s ease;
+}
+
+
+.cart-home-add:hover{
+    background-color: #f3f3f3;
+    transition: all 0.4s ease;
+    color: #000000;
+}
+
+.book-wrapper{
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 4%;
+}
+
+.book-wrapper img{
+    width: 100%;
+    display: block;
+}
+
+.book-content h1{
+    font-family: "Tilda Sans", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+}
+
+.book-content p{
+    font-family: "Tilda Sans", Arial, sans-serif;
+}
+
+
+.content-section {
+    margin: 1em;
+}
+
+
+.section-header {
+    font-family: "LexendDecaLight", Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: 100;
+    color: rgb(64, 59, 59);
+    text-align: center;
+}
+
+
+.cart-header {
+    font-family: "LexendDecaLight", Arial, Helvetica, sans-serif;
+    color: rgb(64, 59, 59);
+    font-weight: bold;
+    font-size: 1em;
+}
+
+span.cart-header {
+    font-family: "LexendDecaLight", Arial, Helvetica, sans-serif;
+    color: rgb(64, 59, 59);
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-row {
+    display: flex;
+}
+
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 20%;
+    color: #333;
+}
+
+.cart-quantity {
+    width: 35%;
+    font-family: "LexendDecaLight", Arial, Helvetica, sans-serif;
+    color: rgb(64, 59, 59);
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.cart-item-title {
+    margin-left: .5em;
+    font-family: "LexendDecaLight", Arial, Helvetica, sans-serif;
+    color: rgb(64, 59, 59);
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.cart-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-family: "LexendDecaLight", Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    color: rgb(64, 59, 59);
+    font-size: 1.5em;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.cart-page-wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.btn-purchase{
+    font-family: "LexendDecaLight", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(64, 59, 59);
+    margin-top: 10px;
+    border: 1px solid black;
+    padding: 10px 30px;
+    background-color: #403b3b;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.btn-purchase:hover{
+    background-color: #f3f3f3;
+    transition: all 0.4s ease;
+    color: #000000;
+}
+
+.btn-div{
+    width: 100%;
+    text-align: center;
+}
+
+
+.btn-delete{
+    font-family: "LexendDecaLight", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: rgb(64, 59, 59);
+    margin-top: 10px;
+    border: 1px solid black;
+    padding: 10px 30px;
+    background-color: #403b3b;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin: auto;
+}
+
+.btn-delete:hover{
+    background-color: #530e0e;
+    transition: all 0.4s ease;
+}
+
+.modal-container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.39);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.modal-purchase {
+    background-color: #ffffff;
+    width: 30%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.modal-purchase p{
+    font-family: "Tilda Sans", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+}
+
+.modal-title{
+    font-family: "Tilda Sans", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    text-align: center;
+}
+
+
+.modal-purchase form {
+    text-align: center;
+}
+
+.modal-purchase input {
+    width: 70%;
+    height: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.modal-purchase button {
+    font-family: "LexendDecaLight", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(64, 59, 59);
+    margin-top: 10px;
+    border: 1px solid black;
+    padding: 10px 30px;
+    background-color: #403b3b;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border-radius: 5px;
+}
+
+.modal-purchase button:hover {
+    background-color: #acacac;
+    color: #000000;
+}
+
+.modal-container img {
+    width: 5%;
+    float: right;
+}
+
+
+.cart-row-min-content h3{
+    font-family: "Tilda Sans", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+}
+
+.cart-row-min-content p{
+    font-family: "Tilda Sans", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.cart-min{
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .carts-home{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .carts-home{
+        grid-template-columns: 1fr;
+    }
+
+    .cart-row-min-content h3{
+        font-family: "Tilda Sans", Arial, sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .cart-row-min-content p{
+        font-family: "Tilda Sans", Arial, sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+}
+
+
+.cart-row-min {
+    display: none;
+}
+
+.cart-row-min img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .carts-home{
+        grid-template-columns: 1fr;
+    }
+
+        
+    .home-title{
+        font-size: 30px;
+        font-weight: 100;
+    }
+
+    .book-wrapper{
+        grid-template-columns: 1fr;
+    }
+
+    .cart-row{
+        display: none;
+    }
+
+    .cart-row-min {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 5%;
+    }
+
+    .cart-min{
+        display: block;
+    }
 }

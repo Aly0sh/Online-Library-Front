@@ -30,7 +30,7 @@ import axios from "axios";
 export default {
     data() {
         return {
-            signUpUrl: 'http://127.0.0.1:8000/api/auth/register/',
+            baseUrl: "https://yngaily.herokuapp.com",
             user: {
                 username: '',
                 company_name: '',
@@ -51,56 +51,54 @@ export default {
     methods: {
         signup() {
             axios
-                .post("http://127.0.0.1:8000/api/auth/register/", this.user)
+                .post(this.baseUrl + "/api/auth/register/", this.user)
                 .then((resp) => {
                     console.log(resp)
-                    if (resp.status == 200) {
+                    if (resp.status == 200 || resp.status == 201) {
                         this.data = 'auth';
                         this.signin(this.user);
                 }
                 console.log(this.$store.state);
                 })
                 .catch((error) => {
-                    console.log(error.response);
-                    if (!error.response) {
-                        this.$store.commit("setError", error);
-                    } else if (error.response.data.details === undefined) {
-                        this.$store.commit("setError", error);
-                    } else {
-                        this.signInErrorFlag = true;
-                        this.signInErrorMessage = error.response.data.details;
-                        console.log(error.response.data);
+                    if (error.response.status == 400) {
+                        console.log(error.response.data.email[0]);
+                        if (error.response.data.email[0] == "Enter a valid email address.") {
+                            alert("Введите электронную почту корректно!");
+                        } else {
+                            alert("Введите данные правильно!")
+                        }
                     }
+                    console.log(error.response)
                 });
             },
         signup2() {
             axios
-                .post("http://127.0.0.1:8000/api/cust/register/", this.user2)
+                .post(this.baseUrl + "/api/cust/register/", this.user2)
                 .then((resp) => {
                     console.log(resp)
-                    if (resp.status == 200) {
+                    if (resp.status == 200 || resp.status == 201) {
                         this.data = 'auth';
                         this.signin(this.user2);
-                }
-                console.log(this.$store.state);
+                    }
+                    console.log(this.$store.state);
                 })
                 .catch((error) => {
-                    console.log(error.response);
-                    if (!error.response) {
-                        this.$store.commit("setError", error);
-                    } else if (error.response.data.details === undefined) {
-                        this.$store.commit("setError", error);
-                    } else {
-                        this.signInErrorFlag = true;
-                        this.signInErrorMessage = error.response.data.details;
-                        console.log(error.response.data);
+                    if (error.response.status == 400) {
+                        console.log(error.response.data.email[0]);
+                        if (error.response.data.email[0] == "Enter a valid email address.") {
+                            alert("Введите электронную почту корректно!");
+                        } else {
+                            alert("Введите данные правильно!")
+                        }
                     }
+                    console.log(error.response)
                 });
             },
             
         signin(user) {
             axios
-                .post("http://127.0.0.1:8000/login/", user)
+                .post(this.baseUrl + "/login/", user)
                 .then((resp) => {
                     if (resp.status == 200) {
                         // this.$store.commit("setCredentials", {

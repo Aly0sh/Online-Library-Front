@@ -1,17 +1,17 @@
 <template>
   <nav class="firstNav">
     <div class="logo">
-      <img src="./assets/images/logo.png" alt=""/>
+      <img src="./assets/images/logo.png" alt="" @click="$router.push('/')"/>
     </div>
     <ul class="links">
       <li>
         <router-link to="/" class="lexend link">ГЛАВНАЯ</router-link>
       </li>
-      <li><a href="" class="lexend link">BOOKS</a></li>
-      <li><a href="" class="lexend link">BOOKS</a></li>
+      <li><a href="" class="lexend link">МАГАЗИНЫ</a></li>
+      <li><a href="" class="lexend link">ЖАНРЫ</a></li>
     </ul>
     <ul class="icons">
-      <li><img src="./assets/images/cart-black.svg" alt=""></li>
+      <li><img @click="$router.push('/cart')" src="./assets/images/cart-black.svg" alt=""></li>
       <li><img src="./assets/images/icon_geoloc.svg" alt=""></li>
       <li><img src="./assets/images/icon_login.svg" @click="$router.push('/login')" alt=""></li>
     </ul>
@@ -28,7 +28,7 @@
     </div>
 
     <div :class="burger ? 'nav-cart-dis' : 'nav-cart'">
-      <img src="./assets/images/cart-black.svg" alt="">
+      <img @click="$router.push('/cart')" src="./assets/images/cart-black.svg" alt="">
     </div>
   </nav> 
   <router-view></router-view>
